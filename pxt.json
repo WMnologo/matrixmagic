@@ -10,7 +10,8 @@
         "main.blocks",
         "main.ts",
         "README.md",
-        "matrixmagic.ts"
+        "matrixmagic.ts",
+         "_locales/zh-cn/MatrixMagic-strings.json"
     ],
     "testFiles": [
         "test.ts"
