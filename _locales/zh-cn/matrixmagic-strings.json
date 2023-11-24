@@ -1,0 +1,14 @@
+{
+
+
+  "MatrixMagic.Touch_Sensor_Status|block": "读取接口|%index 触碰传感器状态",
+  "MatrixMagic.Touch_Sensor_Press|block": "接口|%index 触碰传感器被|%status",
+  "MatrixMagic.Infrared_Reflection_Status|block": "读取接口|%index 避障传感器状态",
+  "MatrixMagic.Sound_Sensor_Status|block": "读取接口|%index 声音传感器状态",
+  "MatrixMagic.Sound_Sensor_Number|block": "读取接口|%index 声音传感器数值",
+  "MatrixMagic.Light_Sensor_Number|block": "读取接口|%index 光线传感器数值",
+  "MatrixMagic.Potentiometer_Sensor_Number|block": "读取接口|%index 电位器数值",
+  "MatrixMagic.Five_Directional_Buttons_Number|block": "读取接口|%index 五向按键按下的方向",
+
+
+}
