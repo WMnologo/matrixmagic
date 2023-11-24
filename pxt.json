@@ -11,7 +11,7 @@
         "main.ts",
         "README.md",
         "matrixmagic.ts",
-         "_locales/zh-cn/MatrixMagic-strings.json"
+         "_locales/zh-cn/matrixmagic-strings.json"
     ],
     "testFiles": [
         "test.ts"
