@@ -1,22 +1,15 @@
-/*
-Copyright (C): 2010-2019, Shenzhen Onion3 Tech
-modified from Sean
-load dependency
-"Zero": "file:../pxt-Zero"
-*/
 
 //% color="#006400" weight=20 icon="\uf1b9"
-namespace MatrixMagic {
-
+namespace matrixmagic {
     
 
     export enum Pin {
         //% block=P1
-        P1 = 12,
+        P1 = 0,
         //% block=P2
-        P2 = 13,
+        P2 = 1,
         //% block=P3
-        P3 = 15,
+        P3 = 2,
     }
 
     export enum Status {
@@ -49,7 +42,7 @@ namespace MatrixMagic {
     }
 
 
-    //% blockId=MatrixMagic_Touch_Sensor_Status block="Touch Sensor Interface |%index Status "
+    //% blockId=matrixmagic_touch_sensor_status block="Touch Sensor Interface |%index Status "
     //% weight=87
     //% blockGap=10
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
@@ -67,7 +60,7 @@ namespace MatrixMagic {
     }
 
 
-    //% blockId=MatrixMagic_Touch_Sensor_Press block="Interface |%index Touch Sensor |%status "
+    //% blockId=matrixmagic_touch_sensor_press block="Interface |%index| Touch Sensor |%status| "
     //% weight=87
     //% blockGap=10
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
@@ -91,7 +84,48 @@ namespace MatrixMagic {
     //% weight=87
     //% blockGap=10
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
-    export function Infrared_Reflection_Status(index: Pin): number {
+    export function Infrared_Reflection_Status(index: Pin): boolean{
+        //pins.setPull(DigitalPin.P1, PinPullMode.PullUp);
+        let value = 0;
+        switch (index) {
+            case Pin.P1: value = pins.digitalReadPin(DigitalPin.P12); break;
+            case Pin.P2: value = pins.digitalReadPin(DigitalPin.P13); break;
+            case Pin.P3: value = pins.digitalReadPin(DigitalPin.P14); break;
+        }
+
+        if (value == 0) {
+            return true
+        } else {
+            return false
+        }
+
+    }
+
+    //% blockId=MatrixMagic_Double_Line_Right_Status block="Double Line Right |%index Status "
+    //% weight=87
+    //% blockGap=10
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
+    export function Double_Line_Right_Status  (index: Pin): boolean {
+        //pins.setPull(DigitalPin.P1, PinPullMode.PullUp);
+        let value = 0;
+        switch (index) {
+            case Pin.P1: value = pins.digitalReadPin(DigitalPin.P12); break;
+            case Pin.P2: value = pins.digitalReadPin(DigitalPin.P13); break;
+            case Pin.P3: value = pins.digitalReadPin(DigitalPin.P14); break;
+        }
+        if (value == 0) {
+            return true
+        } else {
+            return false
+        }
+
+
+    }
+    //% blockId=MatrixMagic_Double_Line_Left_Status block="Double Line Left |%index Status "
+    //% weight=87
+    //% blockGap=10
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
+    export function Double_Line_Left_Status(index: Pin): boolean {
         //pins.setPull(DigitalPin.P1, PinPullMode.PullUp);
         let value = 0;
         switch (index) {
@@ -100,7 +134,11 @@ namespace MatrixMagic {
             case Pin.P3: value = pins.digitalReadPin(DigitalPin.P2); break;
         }
 
-        return value;
+        if (value == 0) {
+            return true
+        } else {
+            return false
+        }
 
     }
 
@@ -108,13 +146,13 @@ namespace MatrixMagic {
     //% weight=87
     //% blockGap=10
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
-    export function Sound_Sensor_Status(index: Pin): number {
+    export function Sound_Sensor_Status(index: Pin): boolean {
         //pins.setPull(DigitalPin.P1, PinPullMode.PullUp);
-        let value = 0;
+        let value = false;
         switch (index) {
-            case Pin.P1: value = pins.digitalReadPin(DigitalPin.P0); break;
-            case Pin.P2: value = pins.digitalReadPin(DigitalPin.P1); break;
-            case Pin.P3: value = pins.digitalReadPin(DigitalPin.P12); break;
+            case Pin.P1: pins.digitalReadPin(DigitalPin.P12); break;
+            case Pin.P2: pins.digitalReadPin(DigitalPin.P13); break;
+            case Pin.P3: pins.digitalReadPin(DigitalPin.P14); break;
         }
 
         return value;
@@ -139,6 +177,8 @@ namespace MatrixMagic {
         return value;
 
     }
+
+
 
     //% blockId=MatrixMagic_Light_Sensor_Number block="Light Sensor Interface |%index Number "
     //% weight=87

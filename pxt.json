@@ -1,6 +1,8 @@
 {
-    "name": "MatrixMagic",
-    "description": "",
+    "name": "matrixmagic",
+    "version": "0.0.1",
+    "description": "Extension for MatrixMagic",
+    "license": "MIT",
     "dependencies": {
         "core": "*",
         "radio": "*",
@@ -11,11 +13,12 @@
         "main.ts",
         "README.md",
         "matrixmagic.ts",
-         "_locales/zh-cn/matrixmagic-strings.json"
+        "_locales/zh-cn/matrixmagic-strings.json"
     ],
     "testFiles": [
         "test.ts"
     ],
+    "public": true,
     "targetVersions": {
         "target": "6.0.22",
         "targetId": "microbit"
