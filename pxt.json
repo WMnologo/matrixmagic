@@ -13,6 +13,7 @@
         "main.ts",
         "README.md",
         "matrixmagic.ts",
+        "DFRobot_VL53L0X.cpp",
         "_locales/zh-cn/matrixmagic-strings.json"
     ],
     "testFiles": [
