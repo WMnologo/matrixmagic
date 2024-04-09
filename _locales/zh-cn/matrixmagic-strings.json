@@ -9,5 +9,7 @@
     "matrixmagic.Sound_Sensor_Number|block": "读取接口|%index 声音传感器数值",
     "matrixmagic.Light_Sensor_Number|block": "读取接口|%index 光线传感器数值",
     "matrixmagic.Potentiometer_Sensor_Number|block": "读取接口|%index 电位器数值",
-    "matrixmagic.Five_Directional_Buttons_Number|block": "读取接口|%index 五向按键按下的方向"
+    "matrixmagic.Five_Directional_Buttons_Number|block": "读取接口|%index 五向按键按下的方向",
+    "matrixmagic.LED_Status|block": "|%LedControl接口 |%index LED灯"
+
 }

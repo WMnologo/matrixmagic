@@ -80,26 +80,7 @@ namespace matrixmagic {
 
     }
 
-    //% blockId=MatrixMagic_Infrared_Reflection_Status block="Infrared Reflection Sensor Interface |%index Status "
-    //% weight=87
-    //% blockGap=10
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
-    export function Infrared_Reflection_Status(index: Pin): boolean{
-        //pins.setPull(DigitalPin.P1, PinPullMode.PullUp);
-        let value = 0;
-        switch (index) {
-            case Pin.P1: value = pins.digitalReadPin(DigitalPin.P12); break;
-            case Pin.P2: value = pins.digitalReadPin(DigitalPin.P13); break;
-            case Pin.P3: value = pins.digitalReadPin(DigitalPin.P14); break;
-        }
-
-        if (value == 0) {
-            return true
-        } else {
-            return false
-        }
-
-    }
+    
 
     //% blockId=MatrixMagic_Double_Line_Right_Status block="Double Line Right |%index Status "
     //% weight=87
@@ -213,6 +194,40 @@ namespace matrixmagic {
         return value;
 
     }
+    //% blockId=MatrixMagic_Infrared_Reflection_Status block="Infrared Reflection Sensor Interface |%index Status "
+    //% weight=87
+    //% blockGap=10
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
+    export function Infrared_Reflection_Status(index: Pin): boolean {
+        //pins.setPull(DigitalPin.P1, PinPullMode.PullUp);
+        let value = 0;
+        switch (index) {
+            case Pin.P1: value = pins.digitalReadPin(DigitalPin.P12); break;
+            case Pin.P2: value = pins.digitalReadPin(DigitalPin.P13); break;
+            case Pin.P3: value = pins.digitalReadPin(DigitalPin.P14); break;
+        }
 
+        if (value == 0) {
+            return true
+        } else {
+            return false
+        }
+
+    }
+    
+    //% blockId=MatrixMagic_LED_Status block="LED |%index |%status "
+    //% weight=87
+    //% blockGap=10
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
+    export function LED_Status(index: Pin, status: LedControl) {
+        pins.digitalWritePin(DigitalPin.P0, status)
+
+        switch (index) {
+            case Pin.P1: pins.digitalWritePin(DigitalPin.P0, status); break;
+            case Pin.P2: pins.digitalWritePin(DigitalPin.P1, status); break;
+            case Pin.P3: pins.digitalWritePin(DigitalPin.P2, status); break;
+        }
+
+    }
   
 }
