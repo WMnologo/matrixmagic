@@ -215,11 +215,12 @@ namespace matrixmagic {
 
     }
     
-    //% blockId=MatrixMagic_LED_Status block="LED |%index |%status "
+    //% blockId=MatrixMagic_LED_Control block="LED |%index |%status "
     //% weight=87
     //% blockGap=10
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
-    export function LED_Status(index: Pin, status: LedControl) {
+    export function LED_Control(index: Pin, status: LedControl) {
+       
         pins.digitalWritePin(DigitalPin.P0, status)
 
         switch (index) {
